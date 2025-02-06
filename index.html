@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Currency Converter</title>
+</head>
+
+<body>
+    <div class="main-container vw-100 vh-100 d-flex justify-content-center align-items-center">
+        <nav class="w-100 d-flex flex-row justify-content-center gap-5 p-4">
+            <h1 class="m-0 text-light">Currency Converter</h1>
+        </nav>
+        <div class="sub-container col-10 col-md-8 d-flex flex-column align-items-center p-4 gap-4">
+            <div class="cont0 col-11 col-md-9">
+                <input class="amount cont0 w-100" type="text" name="amount" placeholder="  Amount">
+                <button class="swapper btn">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512">
+                        <path
+                            d="M438.6 150.6c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.7 96 32 96C14.3 96 0 110.3 0 128s14.3 32 32 32l306.7 0-41.4 41.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96zm-333.3 352c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 416 416 416c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0 41.4-41.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96z" />
+                    </svg>
+                </button>
+            </div>
+            <div class="cont col-11 col-md-7">
+                <img class="flag" src="https://flagsapi.com/AE/shiny/32.png" alt="">
+                <select class="fromSelec cont w-100 p-2 px-5" name="fromCountry">
+                </select>
+            </div>
+            <div class="cont col-11 col-md-7">
+                <img class="flag" src="https://flagsapi.com/AE/shiny/32.png" alt="">
+                <select class="toSelec cont w-100 p-2 px-5" name="toCountry">
+                </select>
+            </div>
+            <button class="converter btn btn-light">Convert</button>
+            <h2 class="result text-light" for="finalValue">...</h2>
+
+        </div>
+    </div>
+
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/index.js"></script>
+</body>
+
+</html>

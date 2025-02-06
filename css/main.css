@@ -1,0 +1,64 @@
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.main-container {
+    background-image: url("/assets/bg.jpg");
+    background-size: cover;
+}
+
+nav {
+    position: absolute;
+    top: 0%;
+    height: 10%;
+    background-color: rgba(4, 170, 45, 0.664);
+}
+
+.sub-container {
+    background-color: rgba(4, 170, 45, 0.664);
+    border-radius: 5rem;
+}
+.btn:focus {
+    box-shadow: none;
+}
+
+.cont {
+    background-color: rgba(78, 78, 78, 0.411);
+    position: relative;
+    border-radius: 2rem;
+    color: rgb(219, 219, 219);
+
+}
+.cont0:focus {
+    background-color: rgba(255, 255, 255, 0.5);
+    position: relative;
+    border-radius: 2rem;
+    border: none;
+    height: 2.5rem;
+    color: rgb(4, 170, 45);
+}
+.cont0 {
+    background-color: rgba(255, 255, 255, 0.5);
+    position: relative;
+    border-radius: 2rem;
+    border: none;
+    height: 2.5rem;
+    color: rgb(4, 170, 45);
+}
+.swapper {
+    position: absolute;
+    right: 2%;
+    top: 0%;
+}
+svg {
+    width: 1.5rem;
+}
+.flag {
+    position: absolute;
+    z-index: 5;
+    top: 11%;
+    left: 2%;
+}
+select option {
+    background-color: rgba(4, 170, 45, 0.664);
+    color: rgb(219, 219, 219);
+}
