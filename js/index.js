@@ -162,6 +162,8 @@ let result = document.querySelector(".result");
 let myAPI = "https://v6.exchangerate-api.com/v6/d6c3d6dd1b133e7469626702/latest/USD";
 let arr = Object.keys(COUNTRY_NAMES);
 let rates = {};
+let fetchInterval = 24 * 60 * 60 * 1000; // 1 day in milliseconds
+let lastFetchTime = localStorage.getItem("lastFetchTime");
 
 arr.map((item) => {
   fromSelec.innerHTML += `<option value="${item}">${item} || ${COUNTRY_NAMES[item]}</option>`;
@@ -189,12 +191,16 @@ converter.addEventListener("click", async () => {
   let from = fromSelec.value;
   let to = toSelec.value;
   if (!isNaN(amount.value) && amount.value > 0) {
-    await fetch(myAPI)
+    if (!lastFetchTime || Date.now() - lastFetchTime >= fetchInterval) {
+      await fetch(myAPI)
         .then((response) => response.json())
         .then((data) => {
           rates = data.conversion_rates;
+          localStorage.setItem("rates", JSON.stringify(rates));
+          localStorage.setItem("lastFetchTime", Date.now());
         });
-    console.log(rates);
+    }
+    rates = JSON.parse(localStorage.getItem("rates"));
     let resultAmount = (parseFloat(amount.value) * rates[to]) / rates[from];
     result.innerHTML = `${amount.value} ${from} = ${resultAmount.toFixed(2)} ${to}`;
   } else {
